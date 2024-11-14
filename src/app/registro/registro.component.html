@@ -1,0 +1,85 @@
+<div class="h-screen w-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-semibold text-center mb-6">
+      Únete como cliente o freelance
+    </h2>
+    <form [formGroup]="form" (ngSubmit)="registrar()">
+      <div class="flex items-center space-y-4">
+        <mat-radio-group
+          formControlName="tipoUsuario"
+          aria-label="Select an option"
+          (change)="onChangeRadioButton()"
+        >
+          <div class="grid grid-cols-2 gap-2 h-2000">
+            <div class="mb-4 h-2000 justify-center items-center">
+              <mat-radio-button [value]="1">Cliente</mat-radio-button>
+              <div class="mb-4 justify-center items-center">
+                Soy un cliente que busca personal para un proyecto
+              </div>
+            </div>
+            <div class="mb-4 h-2000 justify-center items-center">
+              <mat-radio-button [value]="2">Desarrollador</mat-radio-button>
+              <div class="mb-4 justify-center items-center">
+                Soy desarrollador y busco trabajo
+              </div>
+            </div>
+          </div>
+          <div *ngIf="flagMostrarRegistro" class="space-y-4">
+            <div class="mb-6">
+                <label for="email">Nombre</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  formControlName="firstName"
+                  class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring"
+                  placeholder="Nombre"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="lastName">Apellidos</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  formControlName="lastName"
+                  class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring"
+                  placeholder="Apellidos"
+                />
+              </div>                    
+            <div class="mb-6">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring"
+                placeholder="Correo"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="password">Contrase&ntilde; a</label>
+              <input
+                type="password"
+                id="password"
+                formControlName="password"
+                class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus:ring"
+                placeholder="Contraseña"
+              />
+            </div>
+          </div>
+        </mat-radio-group>
+      </div>
+<div class="space-y-4 py-6">
+      <button
+        [disabled]="form.invalid"
+        type="submit"
+        class="w-full space-y-4 bg-indigo-600 text-white p-3 rounded-md hover: bg-indigo-700 focus: outline-none"
+      >
+        Crear cuenta
+      </button>
+    </div>
+    </form>
+    <div *ngIf="flagShowLogin">Registro exitoso,</div>
+    <div *ngIf="flagShowLogin">Por favor dirigete a la pantalla de <a href="/login">Login</a></div>
+    <div>¿Ya tienes una cuenta? <a href="/login">Iniciar sesión</a></div>
+  </div>
+</div>

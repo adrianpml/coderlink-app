@@ -1,0 +1,26 @@
+<div class="h-screen w-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h2 class="text-2xl font-semibold text-center mb-6">
+          Login
+      </h2>
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <div class="mb-4">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" formControlName="email" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring" 
+          placeholder="Correo">
+        </div>
+        <div class="mb-6 space-y-4">
+          <label for="password">Contrase&ntilde; a</label>
+          <input type="password" id="password" formControlName="password"
+            class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus:ring"
+            placeholder="Contraseña"/>
+            <button [disabled]="form.invalid" type="submit"
+            class=" w-full bg-indigo-600 
+            text-white p-3 rounded-md hover: bg-indigo-700 
+            focus: outline-none"
+            >Login</button>
+        </div>
+        <a href="/registro">Registrarse</a>
+        </form>
+  </div>
+</div>

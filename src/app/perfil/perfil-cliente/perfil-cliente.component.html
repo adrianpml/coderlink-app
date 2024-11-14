@@ -1,0 +1,74 @@
+<div class="h-screen w-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-semibold text-center mb-6">
+      Crear perfil <br />
+      Cliente
+    </h2>
+    <form [formGroup]="customerForm" (ngSubmit)="crearPerfilCliente()">
+      <div class="flex items-center w-full">
+        <div class="grid grid-cols-1 gap-1 w-full">
+          <div class="h-20 w-full">
+            Nombre :<br />
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              formControlName="firstName"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring"
+              placeholder="Ingrese el ID del proyecto"
+            />
+          </div>
+          <div>
+            Apellidos:<br />
+            <input
+              type="text"
+              id="lastName"
+              formControlName="lastName"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring"
+              placeholder="Ingrese el ID del proyecto"
+            />
+          </div>
+          <div>
+            Descripcion: <br />
+            <input
+              type="text"
+              id="descripcion"
+              formControlName="descripcion"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring"
+              placeholder="Ingrese la tarifa de pago"
+            />
+          </div>
+          <div>
+            Compañia: <br />
+            <input
+              type="text"
+              id="nameCompany"
+              formControlName="nameCompany"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring"
+              placeholder="Ingrese la tarifa de pago"
+            />
+          </div>
+          <div>
+            Telefono: <br />
+            <input
+              type="text"
+              id="telefono"
+              formControlName="phone"
+              class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring"
+              placeholder="Ingrese la tarifa de pago"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="py-6">
+        <button
+          type="submit"
+          class="w-full bg-indigo-600 text-white p-3 rounded-md hover: bg-indigo-700 focus: outline-none"
+        >
+          Crear perfil
+        </button>
+      </div>
+      <div *ngIf="flagRegistrado">Registro realizado correctamente</div>
+    </form>
+  </div>
+</div>

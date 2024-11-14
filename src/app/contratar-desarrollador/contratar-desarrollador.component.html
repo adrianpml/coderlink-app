@@ -1,0 +1,39 @@
+<div class="h-screen w-screen flex items-center justify-center bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h2 class="text-2xl font-semibold text-center mb-6">
+        Contratar <br> Desarrollador
+      </h2>
+      <form [formGroup]="form" (ngSubmit)="contratar()">
+        <div class="flex items-center w-full">
+            <div class="grid grid-cols-1 gap-1 w-full">
+                <div class="h-20 w-full">Seleccionar Desarrollador:<br>
+                    <mat-form-field class="h-20 w-full">
+                        <mat-select formControlName="idDeveloper">
+                          @for (dev of developers; track dev) {
+                            <mat-option [value]="dev.id">{{dev.firstName}} {{dev.lastName}}</mat-option>
+                          }
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                <div>ID del proyecto:<br>
+                    <input type="idProyecto" id="idProyecto" formControlName="idProyecto" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring" 
+                    placeholder="Ingrese el ID del proyecto">
+                </div>
+                <div>Tarifa de Pago: <br>
+                    <input type="text" id="tarifa" formControlName="tarifa" class="mt-1 block w-full p-3 border border-gray-300 rounded-md focus: outline-none focus: ring" 
+                    placeholder="Ingrese la tarifa de pago">
+                </div>
+              </div> 
+        </div>
+        <button
+          [disabled]="form.invalid"
+          type="submit"
+          class="w-full bg-indigo-600 text-white p-3 rounded-md hover: bg-indigo-700 focus: outline-none"
+        >
+          Contratar desarrollador
+        </button>
+      </form>
+      <div *ngIf="flagSuccessfullHiring"> Desarrollador contratado correctamente</div>
+    </div>
+  </div>
+  
