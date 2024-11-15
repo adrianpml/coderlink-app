@@ -37,9 +37,19 @@ export class AuthService extends MainService{
     const response = await this.postAsyncPass(environment.BASE_URL+'/auth/login', user)
     if(response.token){
       
-      localStorage.setItem("testToken", response.token)
+      localStorage.setItem("userRol", response.role)
+      localStorage.setItem("nombreCompletoUser", response.firstName+' '+response.lastName)
       this.localStorage?.setItem("userToken", response.token);
-      await this.router.navigate(['/contacto']);
+
+      if(response.role == "CUSTOMER"){
+        await this.router.navigate(['/contacto']);
+      }else if(response.role == "DEVELOPER"){
+        await this.router.navigate(['/perfil-developer']);
+      }else if (response.role == "ADMIN"){
+        await this.router.navigate(['/contacto']);
+      }
+
+      
     }
     
 

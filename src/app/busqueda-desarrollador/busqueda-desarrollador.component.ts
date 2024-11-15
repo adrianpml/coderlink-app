@@ -65,9 +65,7 @@ export class BusquedaDesarrolladorComponent {
     if(response){
       this.flagShowResults=true;
       this.dataSource = response;
-      console.log("🚀 ~ BusquedaDesarrolladorComponent ~ searchDeveloper ~ this.dataSource:", this.dataSource)
     }
-    console.log("🚀 ~ BusquedaDesarrolladorComponent ~ searchDeveloper ~ response:", response)
     
     
   }

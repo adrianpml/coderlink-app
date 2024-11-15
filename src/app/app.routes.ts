@@ -7,6 +7,7 @@ import { ContratarDesarrolladorComponent } from './contratar-desarrollador/contr
 import { PerfilClienteComponent } from './perfil/perfil-cliente/perfil-cliente.component';
 import { BusquedaDesarrolladorComponent } from './busqueda-desarrollador/busqueda-desarrollador.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { PerfilDeveloperComponent } from './perfil/perfil-developer/perfil-developer.component';
 
 export const routes: Routes = [
     { path: 'login', 
@@ -29,5 +30,9 @@ export const routes: Routes = [
             component: PerfilClienteComponent},
     { path: 'contacto', 
                 //canActivate: [loginGuard],
-                component: ContactoComponent},                           
+                component: ContactoComponent},
+    { path: 'perfil-developer', 
+        component: PerfilDeveloperComponent
+    },
+                
 ];

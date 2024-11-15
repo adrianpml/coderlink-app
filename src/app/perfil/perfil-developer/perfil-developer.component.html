@@ -1,0 +1,109 @@
+<div class="h-screen w-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+    <!-- <form [formGroup]="customerForm" (ngSubmit)="crearPerfilCliente()"> -->
+    <div class="grid grid-cols-2 gap-3 h-2000 w-full m-auto">
+      <div class="mb-4 h-2000 justify-center items-center w-full">
+        <div class="mb-4 justify-center items-center w-full">
+          <img src="./assets/freelancer2.png"  width="200 px" height="200 px" />
+        </div>
+      </div>
+      <div class="mb-4 h-2000 w-full">
+        <div class="flex h-1000 space-y-5">
+          <span class="flex align-middle space-y-4 text-xl">{{nombre}}</span>
+          <br>
+        </div>
+        <div class="flex grid-cols-1 space-y-4">
+          <div class="space-y-4">
+            <span class="flex align-middle space-y-10">
+                Desarrollador y cliente de software buscando talentos</span
+            >
+            <div class="flex h-1000 space-y-4">
+              <button
+                [disabled]="true"
+                type="submit"
+                class="w-100 bg-indigo-600 text-white p-1 space-y-4 rounded-md hover: bg-indigo-700 focus: outline-none"
+              >
+                Editar perfil
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div></div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-3 h-2000 w-full m-auto">
+        <div class="flex h-1000 w-100">
+          <span class="text-xl">Proyectos publicados</span>
+        </div>
+        <div class="flex h-1000 w-100">
+          <button
+            [disabled]="true"
+            type="submit"
+            class="w-100 bg-indigo-600
+             text-white p-2 
+             rounded-md 
+             hover: bg-indigo-700 
+             focus: outline-none"
+          >Crear proyecto</button>
+        </div>
+        <div class="grid grid-cols-1 gap-3 h-2000 w-full m-auto text-lg">
+            Desarrollo de sitio web
+        </div>
+        <div>
+            Buscando un freelancer para desarrollar un sitio web moderno
+        </div>
+        <div>
+            <button
+            [disabled]="true"
+            type="submit"
+            class="w-100 bg-indigo-600
+            text-white p-1 
+            rounded-md 
+            hover: bg-indigo-700 
+            focus: outline-none"
+          >
+            Ver proyecto
+          </button>
+        </div>
+        <hr>
+        <div class="grid grid-cols-1 gap-3 h-2000 w-full m-auto text-lg">
+            Aplicación móvil
+        </div>
+        <div>
+            Buscando un freelancer para desarrollar un sitio web moderno
+        </div>
+        <div>
+            <button
+            [disabled]="true"
+            type="submit"
+            class="w-100 bg-indigo-600
+            text-white p-1
+            rounded-md 
+            hover: bg-indigo-700 
+            focus: outline-none"
+          >
+            Ver proyecto
+          </button>
+        </div>
+        <hr>
+        <div class="grid grid-cols-1 h-2000 w-full m-auto text-sm">
+            <div class="text-sm">
+                Información adicional
+                <br>
+                Ubicación: Nueva York, E.E. U.U.
+                <br>
+                Miembro desde: Enero 2021
+            </div>
+            <div class="text-sm">
+                
+            </div>
+            <div class="text-sm">
+                
+            </div>            
+        </div>  
+      </div>
+  </div>
+
+</div>

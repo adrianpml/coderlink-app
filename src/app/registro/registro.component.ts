@@ -35,7 +35,6 @@ export class RegistroComponent {
   ){}
 
   async registrar(){
-    console.log('Registra ', this.form.value)
     var usuarioRegistro : User ={
       firstName: this.form?.get('firstName')?.value,
       lastName: this.form?.get('lastName')?.value,
@@ -46,7 +45,6 @@ export class RegistroComponent {
     if(this.form?.get('tipoUsuario')?.value == "2"){
       //Enviar a customer
       const response= await this.authService.createDeveloper(usuarioRegistro)
-      console.log("🚀 ~ RegistroComponent ~ registrar ~ response:", response)
       if(response){
         this. flagShowLogin = true;
       }
@@ -60,7 +58,6 @@ export class RegistroComponent {
   }
 
   onChangeRadioButton(){
-    console.log('Registra ', this.form.value)
     this.flagMostrarRegistro = true;
   }
   
